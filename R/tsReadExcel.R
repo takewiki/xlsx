@@ -7,15 +7,20 @@
 #' @import readxl
 #'
 #' @examples readExcelSheetsIntoList
-readExcelSheetsIntoList <- function(fileName="./data-raw/file/ptc_test.xlsx") {
+readExcelSheetsIntoList <- function(fileName="./data-raw/file/ptc_test.xlsx",sheetHeaderName='') {
   #library(readxl);
   sheets <-readxl::excel_sheets(fileName);
   res <-lapply(sheets,function(sheet){
     
-    as.data.frame(read_excel(fileName, 
+    sheetData <-as.data.frame(read_excel(fileName, 
                              sheet = sheet))
+    if (sheetHeaderName[1] != ''){
+      names(sheetData) <- sheetHeaderName
+  }
+    sheetData;
   })
   names(res) <- sheets
+  
   res;
 }
 

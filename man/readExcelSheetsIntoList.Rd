@@ -4,7 +4,8 @@
 \alias{readExcelSheetsIntoList}
 \title{将多个Excel页签读取到一个列表对象中}
 \usage{
-readExcelSheetsIntoList(fileName = "./data-raw/file/ptc_test.xlsx")
+readExcelSheetsIntoList(fileName = "./data-raw/file/ptc_test.xlsx",
+  sheetHeaderName = "")
 }
 \arguments{
 \item{fileName}{文件名,如xxxx.xlsx，可包含多个页签}
