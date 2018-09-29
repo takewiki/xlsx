@@ -18,3 +18,30 @@ readExcelSheetsIntoList <- function(fileName="./data-raw/file/ptc_test.xlsx") {
   names(res) <- sheets
   res;
 }
+
+#' 获取所有Excel 页签名称
+#'
+#' @param fileName  文件名
+#'
+#' @return 返回值
+#' @export
+#' @import readxl
+#'
+#' @examples sheetNames('aaa.xlsx')
+sheetNames <- function(fileName="./data-raw/file/ptc_test.xlsx") {
+   res <- excel_sheets(fileName);
+  
+}
+
+#' 获取所有页签数量
+#'
+#' @param fileName  文件名
+#'
+#' @return 返回值，整数
+#' @export
+#'
+#' @examples sheetCount('aaa.xlsx')
+sheetCount <- function(fileName="./data-raw/file/ptc_test.xlsx") {
+  res <- length(sheetNames(fileName))
+}
+
